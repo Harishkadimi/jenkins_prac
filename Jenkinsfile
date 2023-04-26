@@ -28,8 +28,8 @@ pipeline {
                 // echo "${SERVER_CREDENTIALS}"
                 // sh "${SERVER_CREDENTIALS}"
                 withCredentials([
-                    usernamePassword(credentials: 'server-credentials', usernameVariable:USER,passwordVariable:PWD)
-                ]){
+                    usernamePassword(credentialsId: 'server-credentials', usernameVariable:USER,passwordVariable:PWD)
+                ]) {
                     echo "user details- username:${USER} and password: ${PWD}"
                 }
 
